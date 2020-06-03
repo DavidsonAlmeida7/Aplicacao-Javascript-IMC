@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMC</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar navbar-dark" style="background-color: #007bff;">
+        <a id="logo" class="navbar-brand" href="">DAVIDSON ALMEIDA - IMC</a>
+    </nav>
+
+    <div class="container">
+        <br>
+        <div class="row">
+            <div class="col">
+                <h1>Cálculo IMC</h1>
+            </div>
+            <div class="col">
+                <h4>Data e Horário de Brasilia: <span id="horas"></span></h4>
+            </div>
+        </div>
+        <p>IMC é a sigla para Índice de Massa Corpórea, parâmetro adotado pela Organização Mundial de Saúde 
+            para calcular o peso ideal de cada pessoa.</p>
+        <p>O índice é calculado da seguinte maneira: divide-se o peso do paciente pela sua altura elevada ao 
+            quadrado. Diz-se que o indivíduo tem peso normal quando o resultado do IMC está entre 18,5 e 24,9.</p>
+        <p>Quer descobrir seu IMC? Insira seu peso e sua altura nos campos abaixo e compare com os índices da 
+            tabela. Importante: siga os exemplos e use pontos como separadores.</p>
+
+        <div class="row">
+            <div class="col">
+                <input type="text" class="form-control" id="altura" name="altura" placeholder="Altura" onkeypress="mascara(this, mascaraInputAltura)">
+            </div>
+            <div class="col">
+                <input type="text" class="form-control"  id="peso" name="peso" placeholder="Peso" onkeypress="mascara(this, mascaraInputPeso)">
+            </div>
+            <div class="col">
+                <button type="button" class="btn btn-primary" onclick="calcImc()">Calcular</button>
+            </div>
+            <div class="col">
+                <button type="button" class="btn btn-danger" onclick="limparImc()">Limpar</button>
+            </div>
+        </div>
+        <hr>
+        <p id="result"></p>
+
+        <!---- Tabela  --->
+        <table class="table">
+            <thead>
+                <tr>
+                    <td colspan="3" style="background-color: #007bff; color: white;">Veja a interpretação do IMC</td>
+                </tr>
+                <tr>
+                    <th scope="col">IMC</th>
+                    <th scope="col">Classificação</th>
+                    <th scope="col">Obesidade (Grau)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr id="result_1">
+                    <td>MENOR QUE 18,5</th>
+                    <td>MAGREZA</td>
+                    <td>0</td>
+                </tr>
+                <tr id="result_2">
+                    <td>ENTRE 18,5 E 24,9</th>
+                    <td>NORMAL</td>
+                    <td>0</td>
+                </tr>
+                <tr id="result_3">
+                    <td>ENTRE 25,0 E 29,9</th>
+                    <td>SOBREPESO</td>
+                    <td>I</td>
+                </tr>
+                <tr id="result_4">
+                    <td>ENTRE 30,0 E 39,9</th>
+                    <td>OBESIDADE</td>
+                    <td>II</td>
+                </tr>
+                <tr id="result_5">
+                    <td>MAIOR QUE 40,0</th>
+                    <td>OBESIDADE GRAVE</td>
+                    <td>III</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <footer id="footer">
+        <p id="texto">Copyright © <span id="date"></span> - DAVIDSON ALMEIDA</p>
+    </footer>
+
+    <!--- Scripts --->
+    <script src="criando_imc.js"></script>
+</body>
+</html>

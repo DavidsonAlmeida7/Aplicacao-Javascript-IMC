@@ -1,0 +1,29 @@
+@font-face {
+    font-family: IndieFlower;
+    src: url(fonts/IndieFlower-Regular.ttf);
+}
+
+@font-face {
+    font-family: Pangolin;
+    src: url(fonts/Pangolin-Regular.ttf);
+}
+
+html, body {
+    font-family: Pangolin;
+    height: 100%;
+}
+
+#logo {
+    font-family: IndieFlower;
+}
+
+.container {
+    min-height: 88%;
+}
+
+#footer {
+    background-color: #007bff;
+    text-align: center;
+    color: white;
+    padding: 10px 5px;
+}
